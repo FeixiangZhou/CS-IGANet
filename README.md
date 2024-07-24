@@ -10,11 +10,10 @@ This repository will contain the code for Cross-skeleton interaction graph aggre
 If you find this work helpful, please consider citing our paper
 
 ```
-@inproceedings{shi2023tridet,
-  title={TriDet: Temporal Action Detection with Relative Boundary Modeling},
-  author={Shi, Dingfeng and Zhong, Yujie and Cao, Qiong and Ma, Lin and Li, Jia and Tao, Dacheng},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
-  pages={18857--18866},
-  year={2023}
+@article{zhou2022cross,
+  title={Cross-skeleton interaction graph aggregation network for representation learning of mouse social behaviour},
+  author={Zhou, Feixiang and Yang, Xinyu and Chen, Fang and Chen, Long and Jiang, Zheheng and Zhu, Hui and Heckel, Reiko and Wang, Haikuan and Fei, Minrui and Zhou, Huiyu},
+  journal={arXiv preprint arXiv:2208.03819},
+  year={2022}
 }
 ```
