@@ -1,4 +1,4 @@
-# Cross-skeleton interaction graph aggregation network for representation learning of mouse social behaviour
+# Cross-skeleton interaction graph aggregation network for representation learning of mouse social behaviour (Under Review)
 
 ## Overview
 
