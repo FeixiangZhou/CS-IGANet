@@ -1,0 +1,50 @@
+split_train: /scratch/3dpoint/fz64/dataset/PDMB/splits/trainfilev3.txt
+split_test: /scratch/3dpoint/fz64/dataset/PDMB/splits/testfilev3.txt
+
+
+#multi-video
+numclass: 9
+sample_rate: 1
+features_path: /scratch/3dpoint/fz64/dataset/PDMB/data_withothers_center_reduceothers2/
+gt_path: /scratch/3dpoint/fz64/dataset/PDMB/data_withothers_center_reduceothers2/
+
+
+# feeder
+feeder: feeders.feeder.Feeder
+test_feeder_args:
+  data_path: /scratch/3dpoint/fz64/dataset/PDMB/data_withothers_center/video213_1_data_joint.npy
+  label_path: /scratch/3dpoint/fz64/dataset/PDMB/data_withothers_center/video213_1_data_joint.pkl
+  random_choose: True
+  window_size: 40
+  debug: False
+
+# model 
+# model: model.agcn.Model
+model: model.agcn_multiskeleton_withself.Model
+model_args:
+  num_class: 9
+  num_person: 2
+  num_point: 7
+  graph: graphori.crim13.Graph
+  graph_args:
+    labeling_mode: 'spatial'
+
+
+# test 
+phase: test
+device: [0, 1]
+test_batch_size: 128
+weights: null
+
+
+#work_dir: ./work_dir/pdmb/mymodel_withself/reduceothers2trainv3_withinterTrue_nodrop_module3re2_BCM/testresult/
+#model_saved_name: ./runs/pdmb/mymodel_withself/reduceothers2trainv3_withinterTrue_nodrop_module3re2_BCM/
+#work_dir: ./work_dir/pdmb/mymodel_withself/reduceothers2trainv3_withinterTrue_nodrop_module3re2/testresult/
+#model_saved_name: ./runs/pdmb/mymodel_withself/reduceothers2trainv3_withinterTrue_nodrop_module3re2/
+#work_dir: ./work_dir/pdmb/mymodel_withself/reduceothers2trainv32_withinterTrue_nodrop_module3re/testresult/
+#model_saved_name: ./runs/pdmb/mymodel_withself/reduceothers2trainv32_withinterTrue_nodrop_module3re/
+work_dir: ./work_dir/pdmb/mymodel_withself/reduceothers2trainv32_withinterTrue_nodrop_module3re/testresult/
+model_saved_name: ./runs/pdmb/mymodel_withself/reduceothers2trainv32_withinterTrue_nodrop_module3re/
+
+
+save_score: True

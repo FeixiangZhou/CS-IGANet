@@ -1,0 +1,72 @@
+#work_dir: ./work_dir/crim13/mymodel_withself/reduceothers3trainv4_withinterTrue/
+#model_saved_name: ./runs/crim13/mymodel_withself/reduceothers3trainv4_withinterTrue/
+#work_dir: ./work_dir/crim13/mymodel_withself/reduceothers3trainv5_withinterTrue_layer4module3re_tmm/
+#model_saved_name: ./runs/crim13/mymodel_withself/reduceothers3trainv5_withinterTrue_layer4module3re_tmm/
+#work_dir: ./work_dir/crim13/mymodel_withself/reduceothers3trainv5_withinterTrue_layer4module3re_tmm_BCM/
+#model_saved_name: ./runs/crim13/mymodel_withself/reduceothers3trainv5_withinterTrue_layer4module3re_tmm_BCM/
+#work_dir: ./work_dir/crim13/mymodel_withself/reduceothers3trainv5_withinterTrue_layer4module3_tmm_BCM/
+#model_saved_name: ./runs/crim13/mymodel_withself/reduceothers3trainv5_withinterTrue_layer4module3_tmm_BCM/
+#work_dir: ./work_dir/crim13/mymodel_withself/reduceothers3trainv5_withinterTrue_layer4module3_tmm_self0.1/
+#model_saved_name: ./runs/crim13/mymodel_withself/reduceothers3trainv5_withinterTrue_layer4module3_tmm_self0.1/
+#work_dir: ./work_dir/crim13/mymodel_withself/reduceothers3trainv6_withinterTrue_layer4module3_tmm_self0/
+#model_saved_name: ./runs/crim13/mymodel_withself/reduceothers3trainv6_withinterTrue_layer4module3_tmm_self0/
+work_dir: ./work_dir/crim13/mymodel_withself/reduceothers3trainv5_withinterTrue_layer4module3re_reladegree_tmm/
+model_saved_name: ./runs/crim13/mymodel_withself/reduceothers3trainv5_withinterTrue_layer4module3re_reladegree_tmm/
+split_train: /scratch/3dpoint/fz64/dataset/CRIM13/splits/trainfilev5.txt
+split_test: /scratch/3dpoint/fz64/dataset/CRIM13/splits/testfilev2.txt
+
+#multi-video
+numclass: 12
+sample_rate: 1
+features_path: /scratch/3dpoint/fz64/dataset/CRIM13/data_withothers_center_reduceothers3/
+gt_path: /scratch/3dpoint/fz64/dataset/CRIM13/data_withothers_center_reduceothers3/
+#features_path: /scratch/3dpoint/fz64/dataset/CRIM13/data_noothers_center/
+#gt_path: /scratch/3dpoint/fz64/dataset/CRIM13/data_noothers_center/
+#features_path: /scratch/3dpoint/fz64/dataset/CRIM13/data_noothers_center_splitvideo/
+#gt_path: /scratch/3dpoint/fz64/dataset/CRIM13/data_noothers_center_splitvideo/
+
+
+# feeder
+feeder: feeders.feeder.Feeder
+train_feeder_args:
+  random_choose: True
+  random_move: True
+  window_size: 40
+  data_path: /scratch/3dpoint/fz64/dataset/CRIM13/data_noothers_center/Tvideo_0_data_joint.npy
+  label_path: /scratch/3dpoint/fz64/dataset/CRIM13/data_noothers_center/Tvideo_0_data_joint.pkl
+  debug: False
+
+test_feeder_args:
+  data_path: /scratch/3dpoint/fz64/dataset/CRIM13/data_noothers_center/Tvideo_0_data_joint.npy
+  label_path: /scratch/3dpoint/fz64/dataset/CRIM13/data_noothers_center/Tvideo_0_data_joint.pkl
+  random_choose: True
+  window_size: 40
+
+# model
+model: model.agcn_multiskeleton_withself.Model
+model_args:
+  num_class: 12
+  num_person: 2
+  num_point: 7
+  graph: graphori.crim13.Graph
+  graph_args:
+    labeling_mode: 'spatial'
+
+#optim
+weight_decay: 0.0001
+base_lr: 0.0005
+step: [150, 150]
+
+
+# training
+device: [0, 1]
+batch_size: 128
+test_batch_size: 128
+num_epoch: 150
+nesterov: True
+
+
+
+
+
+
