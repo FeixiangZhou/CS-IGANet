@@ -3,7 +3,7 @@
 
 # Overview
 
-This repository contains the code for Cross-skeleton interaction graph aggregation network for representation learning of mouse social behaviour [paper](https://arxiv.org/abs/2208.03819), which has been accepted to IEEE Transactions on Image Processing.  
+This repository contains the code for Cross-skeleton interaction graph aggregation network for representation learning of mouse social behaviour [paper](https://arxiv.org/abs/2208.03819)
 
 # Data Preparation
 
