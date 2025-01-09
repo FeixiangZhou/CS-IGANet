@@ -1,6 +1,6 @@
 # 【IEEE TIP 2025】Cross-skeleton interaction graph aggregation network for representation learning of mouse social behaviour
 
-This repository contains the code for Cross-skeleton interaction graph aggregation network for representation learning of mouse social behaviour [paper](https://arxiv.org/abs/2208.03819)
+This repository contains the code for[Cross-skeleton interaction graph aggregation network for representation learning of mouse social behaviour](https://arxiv.org/abs/2208.03819)
 
 # Data Preparation
 
