@@ -20,6 +20,14 @@ Change the config file depending on what you want.
 # Citation
 Please cite the following paper if you use this repository in your reseach.
 ```
+@ARTICLE{10844038,
+  author={Zhou, Feixiang and Yang, Xinyu and Chen, Fang and Chen, Long and Jiang, Zheheng and Zhu, Hui and Heckel, Reiko and Wang, Haikuan and Fei, Minrui and Zhou, Huiyu},
+  journal={IEEE Transactions on Image Processing}, 
+  title={Cross-Skeleton Interaction Graph Aggregation Network for Representation Learning of Mouse Social Behaviour}, 
+  year={2025},
+  pages={1-1},
+  doi={10.1109/TIP.2025.3528218}}
+
 @article{zhou2022cross,
   title={Cross-skeleton interaction graph aggregation network for representation learning of mouse social behaviour},
   author={Zhou, Feixiang and Yang, Xinyu and Chen, Fang and Chen, Long and Jiang, Zheheng and Zhu, Hui and Heckel, Reiko and Wang, Haikuan and Fei, Minrui and Zhou, Huiyu},
